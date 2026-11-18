@@ -48,7 +48,7 @@ def main():
     logo.thumbnail((74, 74), Image.Resampling.LANCZOS)
     canvas.alpha_composite(logo, (48, 46))
     draw = ImageDraw.Draw(canvas)
-    draw.text((144, 44), "PhoneLink", font=font(44, 650), fill="#182D29")
+    draw.text((144, 44), "Fonelink", font=font(44, 650), fill="#182D29")
     draw.text((145, 100), "Your phone, on your Linux desktop.",
               font=font(22), fill="#63726C")
     draw.text((1440, 66), "Fictional demo data", font=font(16), fill="#63726C")

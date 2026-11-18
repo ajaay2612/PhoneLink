@@ -282,7 +282,7 @@ class Hub extends ChangeNotifier {
             : 'phone',
       );
     } catch (_) {
-      error = 'Secure setup failed. Install OpenSSL and restart PhoneLink.';
+      error = 'Secure setup failed. Install OpenSSL and restart Fonelink.';
       notifyListeners();
       return;
     }
@@ -640,7 +640,7 @@ class PhoneLinkApp extends StatelessWidget {
   Widget build(BuildContext context) => ValueListenableBuilder<bool>(
     valueListenable: desktopDarkMode,
     builder: (context, dark, _) => MaterialApp(
-      title: 'PhoneLink',
+      title: 'Fonelink',
       debugShowCheckedModeBanner: false,
       theme: phoneLinkTheme(),
       home: HomePage(hub: hub, initialConfiguration: initialConfiguration),
@@ -1902,7 +1902,7 @@ class _HomePageState extends State<HomePage> {
               ),
               _step(
                 '02',
-                'Open PhoneLink on Android',
+                'Open Fonelink on Android',
                 'Tap “Scan PC code” on the My devices screen.',
               ),
               _step(
@@ -2174,7 +2174,7 @@ class _FilesTabState extends State<FilesTab> {
         busy = false;
         status =
             'Cannot reach phone storage: $e\n'
-            'Open PhoneLink on the phone and allow "All files access".';
+            'Open Fonelink on the phone and allow "All files access".';
       });
     }
   }

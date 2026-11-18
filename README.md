@@ -1,18 +1,20 @@
 <p align="center">
-  <img src="assets/branding/phonelink-1024.png" width="88" alt="PhoneLink icon" />
+  <img src="assets/branding/phonelink-1024.png" width="88" alt="Fonelink icon" />
 </p>
 
-<h1 align="center">PhoneLink</h1>
+<h1 align="center">Fonelink</h1>
 <p align="center">Messages, clipboard and files between your Android phone and Linux desktop.</p>
 <p align="center">Direct local connections · Pinned TLS · No account or cloud relay</p>
 
-![PhoneLink desktop and Android previews with fictional data](docs/images/overview.png)
+![Fonelink desktop and Android previews with fictional data](docs/images/overview.png)
 
-PhoneLink is a Flutter companion app for **Android and Linux**. Read recent SMS messages on your PC, copy verification codes, move text between devices, browse shared folders and download recent phone pictures. Pair once using a QR code and keep both devices on the same reachable local network.
+Fonelink is a Flutter companion app for **Android and Linux**. Read recent SMS messages on your PC, copy verification codes, move text between devices, browse shared folders and download recent phone pictures. Pair once using a QR code and keep both devices on the same reachable local network.
 
 This is an independent project, not Microsoft Phone Link. Windows, macOS and iOS are not supported targets of this repository.
 
-> **Sharing boundary:** the desktop currently shares your **whole home folder**, including ordinary hidden files, with a paired phone. The phone can read and overwrite shared files. PhoneLink’s own desktop credential directory is excluded. Pair only devices you trust and keep the pairing QR/token private. See [Security](#security-and-privacy).
+The display name is **Fonelink**. Existing `phonelink` package IDs, installation/configuration paths and `PhoneLink` download folders are retained for compatibility with installed copies and saved pairings.
+
+> **Sharing boundary:** the desktop currently shares your **whole home folder**, including ordinary hidden files, with a paired phone. The phone can read and overwrite shared files. Fonelink’s own desktop credential directory is excluded. Pair only devices you trust and keep the pairing QR/token private. See [Security](#security-and-privacy).
 
 ## What it does
 
@@ -25,7 +27,7 @@ This is an independent project, not Microsoft Phone Link. Windows, macOS and iOS
 | Files | Browse phone storage from Linux and your shared PC home folder from Android; upload and download files. Hidden dotfiles are hidden by default with a menu option to show them. |
 | Recent pictures | Browse a paginated grid from the phone’s supported photo folders, preview images and save them to the PC. |
 | Recents | A session activity list combining SMS, clipboard events and completed file transfers. |
-| Linux tray | Closing the window hides it to the tray. **Open PhoneLink** restores it; **Quit PhoneLink** exits. |
+| Linux tray | Closing the window hides it to the tray. **Open Fonelink** restores it; **Quit Fonelink** exits. |
 | Login startup | The Linux installer enables quiet desktop-login autostart, with the app hidden in the tray. |
 | Android background service | Keeps the shared runtime and connection running without the app screen; restores an enabled saved pairing after reboot/update where Android permits it. |
 | Appearance | Light/dark desktop themes; Android follows the system by default with System, Light and Dark choices. |
@@ -95,7 +97,7 @@ cd ..
 ./scripts/install-desktop.sh
 ```
 
-The installer requires no administrator privileges. It installs the complete bundle, icon and application-menu launcher, and enables desktop-login autostart with `--start-in-tray`. Open **PhoneLink** from your application menu for the initial pairing.
+The installer requires no administrator privileges. It installs the complete bundle, icon and application-menu launcher, and enables desktop-login autostart with `--start-in-tray`. Open **Fonelink** from your application menu for the initial pairing.
 
 Default installed locations:
 
@@ -161,7 +163,7 @@ The desktop refresh icon in the device card requests fresh status/messages and r
 - **Locked/off-screen phone:** incoming clipboard writes are discarded, not queued for a later unlock. Copy again after unlocking if needed.
 - Echo guards stop an item sent from the phone from immediately being sent back as a new PC copy.
 
-Android may show its own clipboard privacy indicators. PhoneLink does not continuously monitor the phone clipboard in the background, and a foreground service does not grant unrestricted background clipboard reads.
+Android may show its own clipboard privacy indicators. Fonelink does not continuously monitor the phone clipboard in the background, and a foreground service does not grant unrestricted background clipboard reads.
 
 ### Files and pictures
 
@@ -202,7 +204,7 @@ Do not forward these ports from your router. Use a trusted LAN; guest-network is
 - Pairing uses a random **256-bit secret**; requests authenticate before file operations or WebSocket upgrade. Browser origins and ambiguous credential headers are rejected.
 - Only supported local IPv4 destinations are accepted. The transport does not use environment proxies, public-host fallback, cloud relay or redirect following.
 - The authenticated PC provisions a separate certificate identity for the phone file server, which the PC pins. This is a paired-device trust model; the PC knows that provisioned identity’s key.
-- Shared paths are canonicalized; traversal/symlink escapes and access to PhoneLink’s own PC credential directory are blocked. Uploads are staged before replacing the destination.
+- Shared paths are canonicalized; traversal/symlink escapes and access to Fonelink’s own PC credential directory are blocked. Uploads are staged before replacing the destination.
 - Desktop credentials use a private directory/file permission policy; Android pairing material stays in the app sandbox and is excluded from Android backups.
 
 **Important limits:** encryption protects traffic between devices, not the original carrier SMS, an unlocked screen, clipboard previews or stored user files. There is no additional application-level ciphertext layer beyond TLS. A compromised paired device can access the intentionally shared home-folder contents, including other applications’ secrets and executable configuration. The app does not provide a kernel-enforced filesystem sandbox or comprehensive denial-of-service quotas. LAN peers can still reach the TLS listeners and attempt connections.

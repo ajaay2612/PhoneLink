@@ -1,6 +1,6 @@
-# PhoneLink interface
+# Fonelink interface
 
-PhoneLink links an Android phone and a Linux PC directly for SMS, clipboard text and files.
+Fonelink links an Android phone and a Linux PC directly for SMS, clipboard text and files.
 
 The Android interface uses a warm neutral palette with green connection surfaces and bottom navigation. The desktop uses the same warm white, sage and forest-green palette as Android, while preserving its layered panels, compact top navigation and device sidebar. The user explicitly chose this shared green palette over the charcoal/orange variation. Manrope is bundled locally under its SIL Open Font License; no font service is used at runtime.
 
@@ -16,7 +16,7 @@ Build tooling may download packages. Runtime packet capture and camera/pairing v
 
 App-owned icons are drawn with bundled Dart vector paths to avoid icon-font loading failures. No photo backdrop is included.
 
-The Files tab splits the phone browser and a recent-images grid into equal panes (stacked in narrow windows). Dot-prefixed entries are hidden by default; the folder's three-dot menu toggles them and holds Refresh and Send files. Recent photos are listed by modification time from DCIM, Pictures, Download and supported messaging-media folders, with local authenticated thumbnails. Originals can be previewed and saved to PhoneLink downloads. Linux uploads use an in-app chooser so external desktop dialog failures cannot silently cancel selection.
+The Files tab splits the phone browser and a recent-images grid into equal panes (stacked in narrow windows). Dot-prefixed entries are hidden by default; the folder's three-dot menu toggles them and holds Refresh and Send files. Recent photos are listed by modification time from DCIM, Pictures, Download and supported messaging-media folders, with local authenticated thumbnails. Originals can be previewed and saved to Fonelink downloads. Linux uploads use an in-app chooser so external desktop dialog failures cannot silently cancel selection.
 
 The desktop uses the full window without decorative outer frames. Page headings have compact spacing, with All downloads next to Files. Image grids contain square thumbnails without filename captions; filenames remain available in accessible labels and the preview dialog. Standalone instructional note panels are removed. The connected-device card uses a single phone mockup, the phone-reported name, live battery/network/Wi-Fi values, and a status refresh action. Status updates travel over the existing authenticated local WebSocket every 15 seconds. Unknown Android identifiers remain unavailable rather than being fabricated. The required telephony SMS broadcast receiver is declared for immediate foreground/background SMS forwarding; Android-native changes require a full user-run Android launch/build once.
 

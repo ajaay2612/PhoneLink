@@ -1,4 +1,4 @@
-# PhoneLink for Linux
+# Fonelink for Linux
 
 Flutter Linux companion for messages, OTPs, clipboard sharing, file transfer and recent phone pictures. The GTK runner provides the tray, quiet login startup and a background clipboard bridge while keeping the window on the desktop's native rendering backend.
 

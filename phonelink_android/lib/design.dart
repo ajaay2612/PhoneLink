@@ -285,7 +285,7 @@ class Brand extends StatelessWidget {
       const SizedBox(width: 10),
       const Flexible(
         child: Text(
-          'PhoneLink',
+          'Fonelink',
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
           style: TextStyle(

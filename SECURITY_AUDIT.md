@@ -1,4 +1,4 @@
-# PhoneLink security audit — 16 November 2026
+# Fonelink security audit — 16 November 2026
 
 ## Assessment
 
@@ -8,7 +8,7 @@ Both apps intentionally expose authenticated TLS listeners to IPv4 interfaces: d
 
 ## Confirmed finding and fix
 
-**Medium: symlinked configuration directory could bypass credential exclusion.** Requested paths were canonicalized, but excluded paths were compared lexically. If `~/.config` or its PhoneLink subdirectory was a symlink, an authenticated phone could potentially read or overwrite PhoneLink credentials through the resolved location. An unpaired device still needed the pairing secret.
+**Medium: symlinked configuration directory could bypass credential exclusion.** Requested paths were canonicalized, but excluded paths were compared lexically. If `~/.config` or its Fonelink subdirectory was a symlink, an authenticated phone could potentially read or overwrite Fonelink credentials through the resolved location. An unpaired device still needed the pairing secret.
 
 Both copies of `secure_transport.dart` now canonicalize exclusions too, and fail closed when an exclusion cannot be resolved. The new regression first failed on the original implementation and passed after the fix. Ordinary home-folder sharing is preserved.
 
@@ -31,7 +31,7 @@ Both copies of `secure_transport.dart` now canonicalize exclusions too, and fail
 
 ## Remaining trust boundaries and release work
 
-1. **Full home access remains intentional.** A device with the pairing secret can read and overwrite ordinary home files, including hidden files and executable configuration such as shell startup files. A stolen QR/token or compromised paired phone therefore has substantial impact. PhoneLink's own credential directory is excluded; other application secrets are not. This preserves the requested home-folder sharing policy.
+1. **Full home access remains intentional.** A device with the pairing secret can read and overwrite ordinary home files, including hidden files and executable configuration such as shell startup files. A stolen QR/token or compromised paired phone therefore has substantial impact. Fonelink's own credential directory is excluded; other application secrets are not. This preserves the requested home-folder sharing policy.
 2. **Availability is not guaranteed on hostile networks.** TLS handshakes and connections reach the listener before application authentication. There is no comprehensive connection-rate, upload-size, disk-usage or request-concurrency quota. Network flooding can exhaust resources; a trusted peer can fill shared storage. Use a trusted LAN or restrict exposure with the host/network firewall.
 3. **Release signing is unfinished.** Android's release build still uses the debug signing configuration. Use a private release keystore before distributing the app; no signing keys or configuration were invented during this audit.
 4. **Installed/native verification remains open.** No Android-native compilation, real-phone traffic capture, external LAN scan, router/NAT/firewall audit, device lifecycle test or full native dependency audit was performed. A source fix does not update an installed APK or Linux executable. Both apps need updated builds and v2 pairing before relying on these protections.

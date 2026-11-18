@@ -79,9 +79,9 @@ For a simple portable Linux archive:
 
 ```bash
 mkdir -p dist
-cp phonelink_android/build/app/outputs/flutter-apk/app-release.apk dist/PhoneLink-android.apk
-tar -czf dist/PhoneLink-linux-x64.tar.gz -C phonelink_desktop/build/linux/x64/release bundle
-(cd dist && sha256sum PhoneLink-android.apk PhoneLink-linux-x64.tar.gz > SHA256SUMS)
+cp phonelink_android/build/app/outputs/flutter-apk/app-release.apk dist/Fonelink-android.apk
+tar -czf dist/Fonelink-linux-x64.tar.gz -C phonelink_desktop/build/linux/x64/release bundle
+(cd dist && sha256sum Fonelink-android.apk Fonelink-linux-x64.tar.gz > SHA256SUMS)
 ```
 
 Users can extract that portable archive and run `./bundle/phonelink_desktop`. For menu/autostart integration from a source checkout, run `./scripts/install-desktop.sh /absolute/path/to/extracted/bundle`. The separately prepared personal-use archives in the current local `dist/` folder may also contain their own `install.sh`; only advertise that command if the uploaded archive actually includes it.

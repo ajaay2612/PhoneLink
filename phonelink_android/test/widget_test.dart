@@ -45,7 +45,7 @@ void main() {
     expect(find.textContaining('To send copied text'), findsNothing);
     expect(find.text('Pair another PC'), findsNothing);
     expect(tester.takeException(), isNull);
-    expect(find.text('PhoneLink'), findsNothing);
+    expect(find.text('Fonelink'), findsNothing);
     expect(find.text('My devices'), findsWidgets);
     expect(find.text('Notification access'), findsNothing);
     await tester.tap(find.bySemanticsLabel('Settings'));

@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Name=PhoneLink
+Name=Fonelink
 Comment=Local messages, clipboard and files between your devices
 Exec=phonelink_desktop
 Icon=dev.phonelink.PhoneLink
