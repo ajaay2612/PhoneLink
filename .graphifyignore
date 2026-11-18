@@ -1,0 +1,13 @@
+.git/
+.aws/
+.agents/
+.codex/
+**/build/
+**/.dart_tool/
+**/.gradle/
+**/.kotlin/
+**/.idea/
+**/flutter/ephemeral/
+graphify-out/
+
+dist/

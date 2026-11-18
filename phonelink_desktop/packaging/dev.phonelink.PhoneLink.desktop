@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=PhoneLink
+Comment=Local messages, clipboard and files between your devices
+Exec=phonelink_desktop
+Icon=dev.phonelink.PhoneLink
+Terminal=false
+Categories=Utility;
+StartupWMClass=dev.phonelink.PhoneLink

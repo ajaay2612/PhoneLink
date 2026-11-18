@@ -1,0 +1,83 @@
+# Flutter / Dart generated state (keep pubspec.lock for both applications).
+**/.dart_tool/
+**/.pub/
+**/.pub-cache/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.packages
+**/build/
+**/coverage/
+**/.widget_preview/
+**/doc/api/
+**/flutter/ephemeral/
+
+# Android machine configuration, caches and signing material.
+**/.gradle/
+**/.kotlin/
+**/local.properties
+**/key.properties
+**/keystore.properties
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.key
+*.pem
+*.crt
+*.cer
+
+# Personal environment and runtime pairing data; never commit a real pairing QR.
+.env
+.env.*
+!.env.example
+**/FlutterSharedPreferences.xml
+**/shared_prefs/
+/config.json
+/.config/
+/downloads/
+/.aws/
+/.agents/
+/.codex/
+
+# Build/install archives belong in GitHub Releases, not the source repository.
+/dist/
+*.apk
+*.aab
+*.apks
+*.ipa
+*.deb
+*.AppImage
+*.tar.gz
+*.tar.xz
+*.so
+*.dylib
+*.dll
+*.exe
+app.*.symbols
+app.*.map.json
+
+# Local Graphify indexes, agent caches and generated test failures.
+/graphify-out/
+**/failures/
+
+# Editors, logs and OS noise.
+**/.idea/
+**/.vscode/
+*.iml
+*.ipr
+*.iws
+*.log
+*.swp
+*.swo
+*.tmp
+*.bak
+*.pyc
+**/__pycache__/
+**/.venv/
+**/venv/
+.DS_Store
+Thumbs.db
+
+# Legacy local UI captures are not used by current tests. Public renders are in docs/images/.
+/phonelink_android/test/goldens/
+/phonelink_desktop/test/goldens/
