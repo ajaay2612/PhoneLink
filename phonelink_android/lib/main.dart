@@ -75,7 +75,7 @@ class PhoneLinkApp extends StatelessWidget {
         return ValueListenableBuilder<ThemeMode>(
           valueListenable: phoneThemeMode,
           builder: (context, mode, _) => MaterialApp(
-            title: 'Fonelink',
+            title: 'PhoneLink',
             debugShowCheckedModeBanner: false,
             themeMode: mode,
             theme: phoneLinkTheme(),
@@ -415,7 +415,7 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
       if (mounted) {
         showFeedback(
           context,
-          'Open Fonelink notifications in Android Settings',
+          'Open PhoneLink notifications in Android Settings',
         );
       }
     }

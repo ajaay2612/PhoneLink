@@ -107,7 +107,7 @@ class RecentImagesPanel extends StatelessWidget {
                             onDownload!(image);
                           },
                     icon: AppIcon(Icons.download_rounded, size: 18),
-                    label: Text('Save to Fonelink downloads'),
+                    label: Text('Save to PhoneLink downloads'),
                   ),
                 ),
               ],

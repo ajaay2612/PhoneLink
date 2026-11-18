@@ -38,7 +38,7 @@ internal object PhoneRuntime {
     fun attachActivity(value: Activity) { activity = WeakReference(value) }
     fun detachActivity(value: Activity) { if (activity.get() === value) activity.clear() }
     private fun requireActivity(): Activity = activity.get()
-        ?: throw IllegalStateException("Open Fonelink to change permissions")
+        ?: throw IllegalStateException("Open PhoneLink to change permissions")
 
     fun getEngine(value: Context): FlutterEngine {
         engine?.let { return it }

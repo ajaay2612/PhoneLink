@@ -1,4 +1,4 @@
-# Fonelink connection security
+# PhoneLink connection security
 
 See [SECURITY_AUDIT.md](SECURITY_AUDIT.md) for the latest audit, verified fix, dependency results and remaining release checks.
 
@@ -6,7 +6,7 @@ See [SECURITY_AUDIT.md](SECURITY_AUDIT.md) for the latest audit, verified fix, d
 
 The desktop still shares the configured home folder, including normal hidden files. The phone still serves shared phone storage after storage permission is granted. No cloud account, relay or public server is introduced.
 
-Fonelink's own desktop credential directory (`~/.config/phonelink`) is excluded from the file API. Paths that traverse outside the configured root, including symlink escapes, are rejected. This is a boundary fix, not a change to the configured shared folder.
+PhoneLink's own desktop credential directory (`~/.config/phonelink`) is excluded from the file API. Paths that traverse outside the configured root, including symlink escapes, are rejected. This is a boundary fix, not a change to the configured shared folder.
 
 ## Transport and pairing
 

@@ -17,7 +17,7 @@ The Linux tray integration dynamically uses an available AppIndicator library. K
 
 ## Artwork and documentation
 
-- The Fonelink icon is project-selected, AI-generated artwork stored under `assets/branding/`; launcher variants are derived from it.
+- The PhoneLink icon is project-selected, AI-generated artwork stored under `assets/branding/`; launcher variants are derived from it.
 - README gallery illustrations are procedural Flutter Canvas drawings made for the documentation.
 - Public screenshots use fictional fixture data; see [SCREENSHOTS.md](SCREENSHOTS.md).
 - Existing design-process attribution is retained in [`DESIGN.md`](../DESIGN.md), including the unslop skill attribution. Those design references are distinct from the software's project-wide licensing decision.

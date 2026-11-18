@@ -87,11 +87,11 @@ static void create_tray(MyApplication* self, const gchar* icon_path) {
                     G_CALLBACK(tray_connection_changed), self);
 
   GtkWidget* menu = gtk_menu_new();
-  GtkWidget* open = gtk_menu_item_new_with_label("Open Fonelink");
+  GtkWidget* open = gtk_menu_item_new_with_label("Open PhoneLink");
   g_signal_connect(open, "activate", G_CALLBACK(open_from_tray), self);
   gtk_menu_shell_append(GTK_MENU_SHELL(menu), open);
   gtk_menu_shell_append(GTK_MENU_SHELL(menu), gtk_separator_menu_item_new());
-  GtkWidget* quit = gtk_menu_item_new_with_label("Quit Fonelink");
+  GtkWidget* quit = gtk_menu_item_new_with_label("Quit PhoneLink");
   g_signal_connect(quit, "activate", G_CALLBACK(quit_from_tray), self);
   gtk_menu_shell_append(GTK_MENU_SHELL(menu), quit);
   gtk_widget_show_all(menu);
@@ -151,11 +151,11 @@ static void my_application_activate(GApplication* application) {
   if (use_header_bar) {
     GtkHeaderBar* header_bar = GTK_HEADER_BAR(gtk_header_bar_new());
     gtk_widget_show(GTK_WIDGET(header_bar));
-    gtk_header_bar_set_title(header_bar, "Fonelink");
+    gtk_header_bar_set_title(header_bar, "PhoneLink");
     gtk_header_bar_set_show_close_button(header_bar, TRUE);
     gtk_window_set_titlebar(window, GTK_WIDGET(header_bar));
   } else {
-    gtk_window_set_title(window, "Fonelink");
+    gtk_window_set_title(window, "PhoneLink");
   }
 
   gtk_window_set_default_size(window, 1280, 850);
@@ -279,7 +279,7 @@ MyApplication* my_application_new() {
   // corresponding .desktop file. This ensures better integration by allowing
   // the application to be recognized beyond its binary name.
   g_set_prgname(APPLICATION_ID);
-  g_set_application_name("Fonelink");
+  g_set_application_name("PhoneLink");
   gtk_window_set_default_icon_name(APPLICATION_ID);
 
   return MY_APPLICATION(g_object_new(my_application_get_type(),

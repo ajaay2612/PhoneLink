@@ -18,7 +18,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
 
     <application
-        android:label="Fonelink"
+        android:label="PhoneLink"
         android:name="${applicationName}"
         android:usesCleartextTraffic="false"
         android:allowBackup="false"

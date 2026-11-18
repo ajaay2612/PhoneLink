@@ -21,14 +21,14 @@ app = pathlib.Path(sys.argv[1])
 executable = str(app / 'phonelink_desktop')
 quoted = '"' + executable.replace('\\', '\\\\').replace('"', '\\"').replace('`', '\\`').replace('$', '\\$').replace('%', '%%') + '"'
 pathlib.Path(sys.argv[2]).write_text(
-    '[Desktop Entry]\nType=Application\nName=Fonelink\n'
+    '[Desktop Entry]\nType=Application\nName=PhoneLink\n'
     'Comment=Local messages, clipboard and files between your devices\n'
     f'Exec={quoted}\nIcon={sys.argv[3]}\nTerminal=false\n'
     'Categories=Utility;\nStartupWMClass=dev.phonelink.PhoneLink\n')
 autostart = pathlib.Path(sys.argv[4])
 autostart.parent.mkdir(parents=True, exist_ok=True)
 autostart.write_text(
-    '[Desktop Entry]\nType=Application\nName=Fonelink\n'
+    '[Desktop Entry]\nType=Application\nName=PhoneLink\n'
     f'Exec={quoted} --start-in-tray\nIcon={sys.argv[3]}\n'
     'Terminal=false\nX-GNOME-Autostart-enabled=true\n')
 PY
@@ -38,4 +38,4 @@ fi
 if command -v update-desktop-database >/dev/null 2>&1; then
   update-desktop-database "$launcher_dir" || true
 fi
-echo "Installed Fonelink in $app_dir"
+echo "Installed PhoneLink in $app_dir"

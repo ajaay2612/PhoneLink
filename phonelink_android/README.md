@@ -1,6 +1,6 @@
-# Fonelink for Android
+# PhoneLink for Android
 
-Android companion for the local Android/Linux Fonelink pair. It provides QR pairing, recent SMS forwarding, a phone file server, PC home-folder browsing, system/light/dark appearance and the notification-shade clipboard action.
+Android companion for the local Android/Linux PhoneLink pair. It provides QR pairing, recent SMS forwarding, a phone file server, PC home-folder browsing, system/light/dark appearance and the notification-shade clipboard action.
 
 Start with the [root README](../README.md) for screenshots, setup, permissions, architecture and security limits. See [INSTALL.md](../INSTALL.md) for background behavior and [release preparation](../docs/RELEASING.md) before distributing APKs.
 

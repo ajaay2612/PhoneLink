@@ -1,15 +1,15 @@
-# Installing Fonelink
+# Installing PhoneLink
 
 Locally prepared personal-use builds may be available under `dist/`, including the updated icons and security fixes. That directory is ignored by Git and is not included in a source checkout. Build from the [root README](README.md), or use explicitly published GitHub Release assets if the repository maintainer provides them.
 
-- Android: `dist/Fonelink-1.0.0-android.apk`.
-- Linux x64: extract `dist/Fonelink-1.0.0-linux-x64.tar.gz`, then run `./install.sh` inside the extracted folder. No sudo is needed. Open Fonelink from the application menu afterward.
+- Android: `dist/PhoneLink-1.0.0-android.apk`.
+- Linux x64: extract `dist/PhoneLink-1.0.0-linux-x64.tar.gz`, then run `./install.sh` inside the extracted folder. No sudo is needed. Open PhoneLink from the application menu afterward.
 
 Close any running desktop copy before installing. After updating both applications, scan the desktop pairing QR again. Checksums are in `dist/SHA256SUMS`.
 
 ## Android
 
-Copy the APK to your phone and open it. Allow installation from your file manager if Android asks, then install/update Fonelink. Installing the newly built APK applies the launcher/adaptive icon, notification icon and native clipboard overlay changes. Hot restart cannot update those resources.
+Copy the APK to your phone and open it. Allow installation from your file manager if Android asks, then install/update PhoneLink. Installing the newly built APK applies the launcher/adaptive icon, notification icon and native clipboard overlay changes. Hot restart cannot update those resources.
 
 This personal-use APK is built in release mode with the project's existing development signing key. Configure your private release keystore before distributing production APKs; no signing credentials were created or changed here.
 
@@ -27,21 +27,21 @@ For a bundle in a different location:
 ./scripts/install-desktop.sh /absolute/path/to/bundle
 ```
 
-The script only installs an existing bundle; it never builds or launches the app. It copies the full bundle into `$XDG_DATA_HOME/phonelink` (default `~/.local/share/phonelink`) and adds the Fonelink launcher and icon to the current user's application menu. It needs no administrator access. Close an already-running desktop instance before updating its installed files.
+The script only installs an existing bundle; it never builds or launches the app. It copies the full bundle into `$XDG_DATA_HOME/phonelink` (default `~/.local/share/phonelink`) and adds the PhoneLink launcher and icon to the current user's application menu. It needs no administrator access. Close an already-running desktop instance before updating its installed files.
 
 The GTK application ID and `.desktop` identity both use `dev.phonelink.PhoneLink`, so supported desktop environments can associate the running window with its launcher icon.
 
-Closing the Linux window hides Fonelink to its tray icon and keeps the connection alive. Use **Open Fonelink** to restore the window and **Quit Fonelink** to exit. Launching Fonelink again also restores the existing window. This requires a StatusNotifier/AppIndicator-compatible tray host and either `libayatana-appindicator3.so.1` or `libappindicator3.so.1`. If no tray host is connected, the window closes normally instead of leaving an inaccessible hidden process.
+Closing the Linux window hides PhoneLink to its tray icon and keeps the connection alive. Use **Open PhoneLink** to restore the window and **Quit PhoneLink** to exit. Launching PhoneLink again also restores the existing window. This requires a StatusNotifier/AppIndicator-compatible tray host and either `libayatana-appindicator3.so.1` or `libappindicator3.so.1`. If no tray host is connected, the window closes normally instead of leaving an inaccessible hidden process.
 
 The installer enables desktop-login autostart in `$XDG_CONFIG_HOME/autostart/dev.phonelink.PhoneLink.desktop` (default `~/.config/autostart/`). It runs `--start-in-tray`, which starts the connection without opening a window. A normal application-menu launch opens the existing window. Remove that autostart entry to disable login startup. This starts at desktop login, not before a user session exists.
 
-On Wayland, Fonelink keeps its window on native Wayland and uses a separate GTK/XWayland clipboard connection for background text sharing when `DISPLAY` is available. This avoids requiring the window to be focused for clipboard polling. It adds no network listener and does not open or focus a helper window. Without XWayland, it falls back to the normal foreground clipboard API; background clipboard access then depends on the compositor.
+On Wayland, PhoneLink keeps its window on native Wayland and uses a separate GTK/XWayland clipboard connection for background text sharing when `DISPLAY` is available. This avoids requiring the window to be focused for clipboard polling. It adds no network listener and does not open or focus a helper window. Without XWayland, it falls back to the normal foreground clipboard API; background clipboard access then depends on the compositor.
 
 ## Phone background connection
 
 The Android foreground service owns a shared Flutter runtime; removing the phone window from Recents does not intentionally destroy the socket or file server. Reopening the app reattaches to that same runtime. SMS delivery and inbox reads no longer depend on an attached activity. A sticky service can restore saved pairing after an ordinary system process restart without showing permission prompts in the background.
 
-On restrictive phones, allow Fonelink's background battery usage. Android's **Force stop**, foreground task-manager **Stop**, and vendor battery restrictions can still stop or delay the app. These actions are not bypassed. This update needs the rebuilt APK; hot restart cannot apply it.
+On restrictive phones, allow PhoneLink's background battery usage. Android's **Force stop**, foreground task-manager **Stop**, and vendor battery restrictions can still stop or delay the app. These actions are not bypassed. This update needs the rebuilt APK; hot restart cannot apply it.
 
 The ongoing Android notification updates to **PC connected**, **Waiting for PC**, or **Disconnected** when connection state changes. Reconnecting refreshes its shade entry without opening the phone app. In phone **Settings → Connection notification**, check whether Android allows the notification; tap the row to change it. Permission or channel blocking cannot be overridden by the app. The app does not pull open the notification panel.
 

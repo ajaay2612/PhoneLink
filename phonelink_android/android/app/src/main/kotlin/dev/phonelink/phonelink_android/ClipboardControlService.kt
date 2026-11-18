@@ -81,7 +81,7 @@ class ClipboardControlService : Service() {
             manager.getNotificationChannel("phonelink_persistent")?.importance == NotificationManager.IMPORTANCE_NONE) return
         if (manager.activeNotifications.none { it.id == 1 && it.tag == null }) {
             showNotification()
-            Log.i("FonelinkService", "Restored missing connection controls")
+            Log.i("PhoneLinkService", "Restored missing connection controls")
         }
     }
 
@@ -105,7 +105,7 @@ class ClipboardControlService : Service() {
         val status = if (connected) "PC connected" else if (enabled) "Waiting for PC" else "Disconnected"
         if (Build.VERSION.SDK_INT >= 31) builder.setForegroundServiceBehavior(Notification.FOREGROUND_SERVICE_IMMEDIATE)
         val notification = builder.setSmallIcon(R.drawable.ic_stat_phonelink)
-            .setContentTitle("Fonelink · $status").setContentText("Copy text, then tap Send clipboard to PC")
+            .setContentTitle("PhoneLink · $status").setContentText("Copy text, then tap Send clipboard to PC")
             .setContentIntent(open).setOngoing(true).setShowWhen(false).setOnlyAlertOnce(true)
             .addAction(Notification.Action.Builder(null, "Send clipboard to PC", send).build()).build()
         if (!promoteToForeground) {
